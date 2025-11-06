@@ -8,7 +8,6 @@ _history.md
 _readme.md
 _run_format.sh
 _research/
-.DS_Store
 
 # Node artifact files
 node_modules/
