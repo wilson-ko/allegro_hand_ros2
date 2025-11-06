@@ -1,0 +1,16 @@
+<library path="allegro_hand_plexus_hardware">
+    <class name="allegro_hand_plexus_hardware/AllegroHandPlexusHardwareInterface"
+           type="allegro_hand_plexus_hardware::AllegroHandPlexusHardwareInterface"
+           base_class_type="hardware_interface::SystemInterface">
+        <description>
+            Hardware interface for AllegroHand V4
+        </description>
+    </class>
+    <class name="allegro_hand_plexus_hardware/GenericSystem"
+           type="allegro_hand_plexus_hardware::GenericSystem"
+           base_class_type="hardware_interface::SystemInterface">
+        <description>
+            A fake hardware system to test the Allegro Hand interfaces and controllers without the real hardware.
+        </description>
+    </class>
+</library>

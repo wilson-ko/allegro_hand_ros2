@@ -1,0 +1,151 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 100  # Hz  
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    allegro_hand_imu_broadcaster:
+      type: imu_sensor_broadcaster/IMUSensorBroadcaster 
+
+    allegro_hand_position_controller:
+      type: forward_command_controller/ForwardCommandController
+
+    allegro_hand_position_effort_controller:
+      type: allegro_hand_position_effort_controller/PositionEffortController
+
+allegro_hand_imu_broadcaster:
+  ros__parameters:
+    sensor_name: ah_imu
+    frame_id: ah_imu_link
+
+allegro_hand_position_controller:
+  ros__parameters:
+    joints:
+      - ah_joint00
+      - ah_joint01
+      - ah_joint02
+      - ah_joint03
+      - ah_joint10
+      - ah_joint11
+      - ah_joint12
+      - ah_joint13
+      - ah_joint20
+      - ah_joint21
+      - ah_joint22
+      - ah_joint23
+      - ah_joint30
+      - ah_joint31
+      - ah_joint32
+      - ah_joint33
+    interface_name: position
+
+allegro_hand_position_effort_controller:
+  ros__parameters:
+    joints:
+      - ah_joint00
+      - ah_joint01
+      - ah_joint02
+      - ah_joint03
+      - ah_joint10
+      - ah_joint11
+      - ah_joint12
+      - ah_joint13
+      - ah_joint20
+      - ah_joint21
+      - ah_joint22
+      - ah_joint23
+      - ah_joint30
+      - ah_joint31
+      - ah_joint32
+      - ah_joint33
+    interface_name: position
+
+    # accel_limit: 15.0 
+    # friction_torque: 0.01 
+    # kp_vel: 0.01
+    # ki_vel: 0.0
+    # kd_vel: 0.0001
+
+    test_speed: 60.0  # dps 
+
+    # accel_limit: 15.0 
+    accel_limit: 30.0 
+    # friction_torque: 0.01 
+    # kp_vel: 0.01
+    # ki_vel: 0.008
+    # kd_vel: 0.0001
+
+    # friction_torque: 0.01 
+    # kp_vel: 0.013
+    # ki_vel: 0.008
+    # kd_vel: 0.0003
+
+    friction_torque: 0.01 
+    kp_vel: 0.01
+    ki_vel: 0.008
+    kd_vel: 0.0002
+
+    velocity_limit: 6.283185307179586  
+    kp_pos: 10.0
+    ki_pos: 0.000
+    kd_pos: 0.02
+
+
+
+
+
+# allegro_hand_posture_controller:
+#   ros__parameters:
+#     goal_tolerance : 0.01
+#     allow_stalling : True 
+#     stall_timeout : 0.5
+#     stall_velocity_threshold : 0.01
+#     joints:
+#       - ah_joint00
+#       - ah_joint01
+#       - ah_joint02
+#       - ah_joint03
+#       - ah_joint10
+#       - ah_joint11
+#       - ah_joint12
+#       - ah_joint13
+#       - ah_joint20
+#       - ah_joint21
+#       - ah_joint22
+#       - ah_joint23
+#       - ah_joint30
+#       - ah_joint31
+#       - ah_joint32
+#       - ah_joint33 
+
+# allegro_hand_position_effort_controller:
+#   ros__parameters:
+#     device : "v4"
+#     goal_tolerance : 0.01
+#     allow_stalling : True 
+#     stall_timeout : 0.5
+#     stall_velocity_threshold : 0.01
+#     joints:
+#       - ah_joint00
+#       - ah_joint01
+#       - ah_joint02
+#       - ah_joint03
+#       - ah_joint10
+#       - ah_joint11
+#       - ah_joint12
+#       - ah_joint13
+#       - ah_joint20
+#       - ah_joint21
+#       - ah_joint22
+#       - ah_joint23
+#       - ah_joint30
+#       - ah_joint31
+#       - ah_joint32
+#       - ah_joint33 
+#     grasp_reference_frame: palm_link
+#     fingertips:
+#       - ah_link_05
+#       - ah_link_15
+#       - ah_link_25
+#       - ah_link_35

@@ -1,0 +1,17 @@
+<library path="grasp_action_controller">
+
+  <class name="position_controllers/AllegroHandGraspController"
+         type="position_controllers::AllegroHandGraspController"
+         base_class_type="controller_interface::ControllerInterface">
+    <description>
+    </description>
+  </class>
+
+  <class name="effort_controllers/AllegroHandGraspController"
+         type="effort_controllers::AllegroHandGraspController"
+         base_class_type="controller_interface::ControllerInterface">
+    <description>
+    </description>
+  </class>
+
+</library>

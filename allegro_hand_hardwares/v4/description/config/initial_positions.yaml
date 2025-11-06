@@ -1,0 +1,19 @@
+# Default initial positions for the allegro hand ros2_control fake system
+initial_positions:
+  joint00: 0.7         
+  joint01: 0.1         
+  joint02: 0.0         
+  joint03: 0.0   
+  joint10: 0.0          
+  joint11: 0.0          
+  joint12: 0.0          
+  joint13: 0.0          
+  joint20: 0.0          
+  joint21: 0.0          
+  joint22: 0.0          
+  joint23: 0.0          
+  joint30: 0.0          
+  joint31: 0.0          
+  joint32: 0.0         
+  joint33: 0.0         
+

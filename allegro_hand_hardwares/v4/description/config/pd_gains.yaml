@@ -1,0 +1,37 @@
+# proportial
+p_gains:
+  joint00: 0.8333
+  joint01: 0.5833
+  joint02: 0.5000
+  joint03: 0.5000
+  joint10: 0.4167
+  joint11: 0.6667
+  joint12: 0.7500
+  joint13: 0.4167
+  joint20: 0.4167
+  joint21: 0.6667
+  joint22: 0.7500
+  joint23: 0.4167
+  joint30: 0.4167
+  joint31: 0.6667
+  joint32: 0.7500
+  joint33: 0.4167
+
+#derivative
+d_gains:
+  joint00: 0.0417
+  joint01: 0.0417
+  joint02: 0.0417
+  joint03: 0.0333
+  joint10: 0.0208
+  joint11: 0.0417
+  joint12: 0.0458
+  joint13: 0.0333
+  joint20: 0.0208
+  joint21: 0.0417
+  joint22: 0.0458
+  joint23: 0.0333
+  joint30: 0.0208
+  joint31: 0.0417
+  joint32: 0.0458
+  joint33: 0.0333

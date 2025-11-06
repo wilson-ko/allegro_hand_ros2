@@ -1,0 +1,37 @@
+# proportial
+p_gains:
+  joint00: 0.0
+  joint01: 0.0
+  joint02: 0.0
+  joint03: 0.0
+  joint10: 0.0
+  joint11: 0.2
+  joint12: 0.0
+  joint13: 0.0
+  joint20: 0.0
+  joint21: 0.0
+  joint22: 0.0
+  joint23: 0.0
+  joint30: 0.0
+  joint31: 0.0
+  joint32: 0.0
+  joint33: 0.0
+
+#derivative
+d_gains:
+  joint00: 0.0
+  joint01: 0.0
+  joint02: 0.0
+  joint03: 0.0
+  joint10: 0.0
+  joint11: 0.1
+  joint12: 0.0
+  joint13: 0.0
+  joint20: 0.0
+  joint21: 0.0
+  joint22: 0.0
+  joint23: 0.0
+  joint30: 0.0
+  joint31: 0.0
+  joint32: 0.0
+  joint33: 0.0
