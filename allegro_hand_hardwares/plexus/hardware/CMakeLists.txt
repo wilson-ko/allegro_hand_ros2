@@ -58,9 +58,6 @@ add_library(
 
 target_compile_definitions(allegro_hand_plexus_hardware PUBLIC SPDLOG_ACTIVE_LEVEL=SPDLOG_LEVEL_TRACE)
 
-add_executable(interface_test ./src/plexus_interface_test.cpp)
-
-target_compile_definitions(interface_test PUBLIC SPDLOG_ACTIVE_LEVEL=SPDLOG_LEVEL_TRACE)
 
 #add headfile source
 # target_include_directories(ros2_cmd_server PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include/)
@@ -72,9 +69,6 @@ $<INSTALL_INTERFACE:include/allegro_hand_plexus_hardware>
 
 #add dependencies
 ament_target_dependencies(allegro_hand_plexus_hardware ${dependencies})
-
-target_link_libraries(interface_test spdlog::spdlog )
-ament_target_dependencies(interface_test ${dependencies}) 
 
 
 #export hardware plugins
@@ -90,11 +84,6 @@ pluginlib_export_plugin_description_file(hardware_interface allegro_hand_plexus_
 # install(TARGETS srv_test_client
 #   DESTINATION lib/${PROJECT_NAME}
 # )
-
-#interface test 
-install(TARGETS interface_test
-  DESTINATION lib/${PROJECT_NAME}
-)
 
 #ros2_control hardware
 install(TARGETS allegro_hand_plexus_hardware
@@ -116,6 +105,14 @@ if(BUILD_TESTING)
   # a copyright and license is added to all source files
   set(ament_cmake_cpplint_FOUND TRUE)
   ament_lint_auto_find_test_dependencies()
+
+  if(ament_cmake_gmock_FOUND)
+    ament_add_gmock(interface_test ./src/plexus_interface_test.cpp)
+    target_compile_definitions(interface_test PUBLIC SPDLOG_ACTIVE_LEVEL=SPDLOG_LEVEL_TRACE)
+    target_link_libraries(interface_test spdlog::spdlog)
+    ament_target_dependencies(interface_test ${dependencies})
+    install(TARGETS interface_test DESTINATION lib/${PROJECT_NAME})
+  endif()
 endif()
 
 #export

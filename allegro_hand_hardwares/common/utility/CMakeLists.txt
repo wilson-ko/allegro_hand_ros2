@@ -15,6 +15,7 @@ endif()
 # --- Find Dependencies ---
 find_package(ament_cmake REQUIRED)
 find_package(spdlog REQUIRED)
+find_package(fmt REQUIRED)
 find_package(Boost REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(hardware_interface REQUIRED)
@@ -39,8 +40,10 @@ ament_target_dependencies(${PROJECT_NAME}
   rclcpp
   hardware_interface
   spdlog
+  fmt
   Boost
 )
+target_link_libraries(${PROJECT_NAME} fmt::fmt)
 
 # --- Test Executable ---
 add_executable(test_library test/test_library.cpp)
@@ -68,6 +71,6 @@ install(
 
 # --- Exporting ---
 ament_export_targets(export_${PROJECT_NAME} HAS_LIBRARY_TARGET)
-ament_export_dependencies(rclcpp hardware_interface spdlog Boost)
+ament_export_dependencies(rclcpp hardware_interface spdlog Boost fmt)
 ament_package()
 
