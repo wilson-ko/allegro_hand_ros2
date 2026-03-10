@@ -131,6 +131,11 @@ controller_interface::CallbackReturn PositionEffortController::on_activate(const
     return controller_interface::CallbackReturn::ERROR;
   }
 
+  joint_position_states_.clear();
+  joint_velocity_states_.clear();
+  joint_position_states_.reserve(params_.joints.size());
+  joint_velocity_states_.reserve(params_.joints.size());
+
   // Store references to state interfaces
   for (auto& interface : state_interfaces_) {
     for (const auto& joint : params_.joints) {
@@ -162,6 +167,8 @@ controller_interface::CallbackReturn PositionEffortController::on_deactivate(con
   // reset command buffer
   rt_command_ptr_ = realtime_tools::RealtimeBuffer<std::shared_ptr<CmdType>>(nullptr);
   rt_effort_ptr_ = realtime_tools::RealtimeBuffer<std::shared_ptr<CmdType>>(nullptr);
+  joint_position_states_.clear();
+  joint_velocity_states_.clear();
   return controller_interface::CallbackReturn::SUCCESS;
 }
 
